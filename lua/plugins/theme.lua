@@ -1,0 +1,1 @@
+/home/anass/.config/omarchy/current/theme/neovim.lua
