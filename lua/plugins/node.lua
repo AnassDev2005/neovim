@@ -16,17 +16,36 @@ return {
     config = function()
       require("package-info").setup()
     end,
-  }, {
-  "nvim-neotest/neotest",
-  dependencies = {
-    "nvim-neotest/neotest-jest",
   },
-  config = function()
-    require("neotest").setup({
-      adapters = {
-        require("neotest-jest"),
+
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "nvim-neotest/neotest-jest",
+    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-jest"),
+        },
+      })
+    end,
+  },
+
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        json = { "prettier" },
       },
-    })
-  end,
-},
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
+      },
+    },
+  },
 }
