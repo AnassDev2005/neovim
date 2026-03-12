@@ -42,10 +42,11 @@ return {
         typescript = { "prettier" },
         json = { "prettier" },
       },
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
     },
   },
+  {
+    "rafamadriz/friendly-snippets",
+  },
+  { "windwp/nvim-ts-autotag" }, -- auto close JSX tags
+  { "windwp/nvim-autopairs" }, -- auto brackets
 }
